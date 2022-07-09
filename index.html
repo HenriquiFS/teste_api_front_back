@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,33 +8,9 @@
   </head>
 
   <body>
+    <h1>Lista de Contatos</h1>
     <ul id="lista_de_contatos"></ul>
   </body>
 
-  <script>
-
-    async function getContent() {
-      try {
-        const response = await fetch('http://localhost:4567/')
-        // console.log(response)
-        const data = await response.json()
-        console.log(data)
-        showUsers(data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    getContent()
-
-    function showUsers(users) {
-      let output = ''
-      for(let user of users){
-        output += `<li>${user.name}</li>`
-      }
-      document.querySelector('#lista_de_contatos').innerHTML = output
-    }
-
-  </script>
-
+  <script src="script.js"></script>
 </html>
